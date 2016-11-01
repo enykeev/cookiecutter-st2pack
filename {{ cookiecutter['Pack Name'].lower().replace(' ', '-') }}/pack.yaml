@@ -1,0 +1,13 @@
+---
+name: {{ cookiecutter['Pack Name'].lower().replace(' ', '-') }}
+description: {{ cookiecutter['Description'] }}
+{%- if cookiecutter['Keywords (comma-separated)'] %}
+keywords:
+{%- for keyword in cookiecutter['Keywords (comma-separated)'].split(',') %}
+  - {{ keyword | trim }}
+{%- endfor -%}{% endif %}
+version: {{ cookiecutter['Version'] }}
+author: {{ cookiecutter['Author'] }}
+{%- if cookiecutter['Email'] %}
+email: {{ cookiecutter['Email'] }}
+{%- endif %}
